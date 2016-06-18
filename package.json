@@ -1,6 +1,10 @@
 {
   "name": "easing-equations",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Ionut Cirja",
-  "url": "https://github.com/ionutcirja/easing-equations"
+  "url": "https://github.com/ionutcirja/easing-equations",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ionutcirja/easing-equations"
+  }
 }
