@@ -7,21 +7,21 @@
  * @returns {*}
  */
 
-export function linear(t, b, c, d) {
+function linear(t, b, c, d) {
 	return c * t / d + b;
 }
 
-export function easeInQuad(t, b, c, d) {
+function easeInQuad(t, b, c, d) {
 	t /= d;
 	return c * Math.pow(t, 2) + b;
 }
 
-export function easeOutQuad(t, b, c, d) {
+function easeOutQuad(t, b, c, d) {
 	t /= d;
 	return - c * t * (t - 2) + b;
 }
 
-export function easeInOutQuad(t, b, c, d) {
+function easeInOutQuad(t, b, c, d) {
 	t /= d / 2;
 	if (t < 1) return c / 2 * Math.pow(t, 2) + b;
 
@@ -29,18 +29,18 @@ export function easeInOutQuad(t, b, c, d) {
 	return - c / 2 * (t * (t - 2) - 1) + b;
 }
 
-export function easeInCubic(t, b, c, d) {
+function easeInCubic(t, b, c, d) {
 	t /= d;
 	return c * Math.pow(t, 3) + b;
 }
 
-export function easeOutCubic(t, b, c, d) {
+function easeOutCubic(t, b, c, d) {
 	t /= d;
 	t--;
 	return c * (Math.pow(t, 3) + 1) + b;
 }
 
-export function easeInOutCubic(t, b, c, d) {
+function easeInOutCubic(t, b, c, d) {
 	t /= d / 2;
 	if (t < 1) return c / 2 * Math.pow(t, 3) + b;
 
@@ -48,19 +48,19 @@ export function easeInOutCubic(t, b, c, d) {
 	return c / 2 * (Math.pow(t, 3) + 2) + b;
 }
 
-export function easeInQuart(t, b, c, d) {
+function easeInQuart(t, b, c, d) {
 	t /= d;
 
 	return c * Math.pow(t, 4) + b;
 }
 
-export function easeOutQuart(t, b, c, d) {
+function easeOutQuart(t, b, c, d) {
 	t /= d;
 	t--;
 	return - c * (Math.pow(t, 4) - 1) + b;
 }
 
-export function easeInOutQuart(t, b, c, d) {
+function easeInOutQuart(t, b, c, d) {
 	t /= d / 2;
 	if (t < 1) return c / 2 * Math.pow(t, 4) + b;
 
@@ -68,19 +68,19 @@ export function easeInOutQuart(t, b, c, d) {
 	return - c / 2 * (Math.pow(t, 4) - 2) + b;
 }
 
-export function easeInQuint(t, b, c, d) {
+function easeInQuint(t, b, c, d) {
 	t /= d;
 	return c * Math.pow(t, 5) + b;
 }
 
-export function easeOutQuint(t, b, c, d) {
+function easeOutQuint(t, b, c, d) {
 	t /= d;
 	t--;
 
 	return c * (Math.pow(t, 5) + 1) + b;
 }
 
-export function easeInOutQuint(t, b, c, d) {
+function easeInOutQuint(t, b, c, d) {
 	t /= d / 2;
 	if (t < 1) return c / 2 * Math.pow(t, 5) + b;
 
@@ -88,27 +88,27 @@ export function easeInOutQuint(t, b, c, d) {
 	return c / 2 * (Math.pow(t, 5) + 2) + b;
 }
 
-export function easeInSine(t, b, c, d) {
+function easeInSine(t, b, c, d) {
 	return - c * Math.cos(t / d * (Math.PI / 2)) + c + b;
 }
 
-export function easeOutSine(t, b, c, d) {
+function easeOutSine(t, b, c, d) {
 	return c * Math.sin(t / d * (Math.PI / 2)) + b;
 }
 
-export function easeInOutSine(t, b, c, d) {
+function easeInOutSine(t, b, c, d) {
 	return - c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
 }
 
-export function easeInExpo(t, b, c, d) {
+function easeInExpo(t, b, c, d) {
 	return c * Math.pow(2, 10 * (t / d - 1)) + b;
 }
 
-export function easeOutExpo(t, b, c, d) {
+function easeOutExpo(t, b, c, d) {
 	return c * (- Math.pow(2, - 10 * t / d) + 1) + b;
 }
 
-export function easeInOutExpo(t, b, c, d) {
+function easeInOutExpo(t, b, c, d) {
 	t /= d / 2;
 	if (t < 1) return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
 
@@ -116,21 +116,46 @@ export function easeInOutExpo(t, b, c, d) {
 	return c / 2 * (- Math.pow(2, - 10 * t) + 2) + b;
 }
 
-export function easeInCirc(t, b, c, d) {
+function easeInCirc(t, b, c, d) {
 	t /= d;
 	return - c * (Math.sqrt(1 - Math.pow(t, 2)) - 1) + b;
 }
 
-export function easeOutCirc(t, b, c, d) {
+function easeOutCirc(t, b, c, d) {
 	t /= d;
 	t--;
 	return c * Math.sqrt(1 - Math.pow(t, 2)) + b;
 }
 
-export function easeInOutCirc(t, b, c, d) {
+function easeInOutCirc(t, b, c, d) {
 	t /= d / 2;
 	if (t < 1) return - c / 2 * (Math.sqrt(1 - Math.pow(t, 2)) - 1) + b;
 
 	t -= 2;
 	return c / 2 * (Math.sqrt(1 - Math.pow(t, 2)) + 1) + b;
 }
+
+module.exports = {
+	linear: linear,
+	easeInQuad: easeInQuad,
+	easeOutQuad: easeOutQuad,
+	easeInOutQuad: easeInOutQuad,
+	easeInCubic: easeInCubic,
+	easeOutCubic: easeOutCubic,
+	easeInOutCubic: easeInOutCubic,
+	easeInQuart: easeInQuart,
+	easeOutQuart: easeOutQuart,
+	easeInOutQuart: easeInOutQuart,
+	easeInQuint: easeInQuint,
+	easeOutQuint: easeOutQuint,
+	easeInOutQuint: easeInOutQuint,
+	easeInSine: easeInSine,
+	easeOutSine: easeOutSine,
+	easeInOutSine: easeInOutSine,
+	easeInExpo: easeInExpo,
+	easeOutExpo: easeOutExpo,
+	easeInOutExpo: easeInOutExpo,
+	easeInCirc: easeInCirc,
+	easeOutCirc: easeOutCirc,
+	easeInOutCirc: easeInOutCirc
+};
